@@ -5,13 +5,12 @@ import os
 from flask import Flask, request, jsonify, url_for
 from flask_cors import CORS
 from utils import APIException, generate_sitemap
-from datastructures import Family
+from datastructures import jackson_family
 #from models import Person
 
 app = Flask(__name__)
 app.url_map.strict_slashes = False
 CORS(app)
-global_family = Family("Jackson")
 
 # Handle/serialize errors like a JSON object
 @app.errorhandler(APIException)
@@ -27,7 +26,7 @@ def sitemap():
 def handle_hello():
 
     # this is how you can use the Family datastructure by calling its methods
-    members = global_family.get_all_members()
+    members = jackson_family.get_all_members()
     response_body = {
         "hello": "world",
         "family": members

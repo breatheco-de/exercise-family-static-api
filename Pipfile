@@ -9,9 +9,12 @@ verify_ssl = true
 flask = "*"
 psycopg2-binary = "*"
 flask-cors = "*"
+pytest = "*"
+mock = "*"
 
 [requires]
 python_version = "3.8.1"
 
 [scripts]
 start="python src/app.py"
+test="python tests.py"

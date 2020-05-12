@@ -9,23 +9,20 @@ Please clone the current project to start working your exercise or open it local
 ## 📝 Instructions
 
 - Create the code needed to implement the API endpoints described further below.
-- The only two files you have to edit are:
-	- For Django: `api/family_datastructure.py`, `api/views.py`.
-	- For Flask: `src/family_datastructure.py`, `src/main.py`.
+- The only two files you have to edit are: 
+	- `src/datastructure.py`: Contains the class with the rules on how to manage the fammily members.
+	- `src/app.py`: Contains the API, it uses the Family as datastructure
 - We have prepared a set of automated tests that will give you an idea if your code is correct, run the tests by typing `$ pipenv run tests` on the command line.
 
 ## Data structures
 
 Every **member** of the Doe family must be a dictionary - equivalent of [Objects Literals in JS](https://www.dyn-web.com/tutorials/object-literal/) - and have these values:
-```
+
+```js
     + id: Int
-	  
     + first_name: String
-      
     + last_name: String (Always Doe)
-      
     + age: Int > 0
-      
     + lucky_numbers: Array of int
 ```
 The **family** data-structure will be a class with the following structure:
