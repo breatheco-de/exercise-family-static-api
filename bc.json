@@ -1,0 +1,13 @@
+{
+	"title" : "Family Static API with Flask",
+	"slug" : "family-static-api",
+	"status": "published",
+	"translations": ["es", "us"],
+	"difficulty": "beginner",
+	"technologies": ["flask", "python", "json", "serialization", "data-structures", "rest","api"],
+	"duration" : 8,
+	"description" : "Create an API to show family members",
+	"talents": [
+		{ "badge": "identator", "points": 10 }
+	]
+}
