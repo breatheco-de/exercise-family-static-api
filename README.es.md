@@ -1,6 +1,6 @@
 # ![alt text](https://assets.breatheco.de/apis/img/images.php?blob&random&cat=icon&tags=breathecode,32) Family Static API
 
-¡La familia Doe necesita una API estática! Necesitamos construir las *estructuras de datos (data structures)* y crear un API endpoint para interactuar con él utilizando Postman.
+¡La familia "Jackson" necesita una API estática! Necesitamos construir las *estructuras de datos (data structures)* y crear un API endpoint para interactuar con él utilizando ![Postman](https://postwoman.io/) o Postman.
 
 ## 💻 Instalación
 
@@ -10,8 +10,8 @@ Por favor clona este repositorio para comenzar a codificar tu ejercicio o ábrel
 
 - Crea el código necesario para desarrollar los API endpoints descritos más adelante.
 - Los únicos dos archivos que tienes que editar son:
-	- For Django: `api/family_datastructure.py`, `api/views.py`.
-	- For Flask: `src/family_datastructure.py`, `src/main.py`.
+	- `src/datastructure.py`: Contiene la estructura de datos `FamilyStructure` que se encarga de manejar la familia.
+	- `src/app.py`: Es el código de tu API, aquí debes agregar los endpoints (rutas) y la logica de programación.
 - Hemos preparado un conjunto de pruebas automatizadas que te darán una idea de si tu código es correcto, ejecute las pruebas escribiendo `$ pipenv run tests` en la línea de comandos (terminal o consola).
 
 ## Estructuras de datos (Data structures)
@@ -36,6 +36,7 @@ class Family:
         self._members = [{
             "id": self._generateId(),
             "first_name": "John"
+            "last_name": this.last_name
         }]
 
     # read-only: Use this method to generate random members ID's when adding members into the list
@@ -93,7 +94,7 @@ Esta API debe tener dos endpoints, ambos devuelven JSON:
 Lo que devuelve la información de la familia de Doe.. Ejemplo:
 
 ```md
-GET /member
+GET /members
 
 RESPONSE (Application/JSON):
 
@@ -143,7 +144,7 @@ RESPONSE (application/json):
 ### 4) ELIMINA un miembro
 
 ```md
-POST /member/<int:member_id>
+DELETE /member/<int:member_id>
 Que elimina un miembro dado por el ID dado
 
 RESPONSE (application/json):

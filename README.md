@@ -1,6 +1,6 @@
 # ![alt text](https://assets.breatheco.de/apis/img/images.php?blob&random&cat=icon&tags=breathecode,32) Family Static API
 
-The Doe Family needs a static API! We need to build the *data structures* and create API endpoint to interact with it using Postman.
+The Jackson Family needs a static API! We need to build the *data structures* and create API endpoint to interact with it using Postman.
 
 ## 💻 Installation
 
@@ -115,10 +115,16 @@ Which returns the member of the family where `id == member_id`.
 GET /member/<int:member_id>
 
 RESPONSE (content_type: Application/JSON):
+status_code: 200 if success. 400 if bad request (wrong info) screw up, 500 if the server encounter an error
+
+BODY: //the member's json object
+
 {
-	status_code: 200 if success. 400 if bad request (wrong info) screw up, 500 if the server encounter an error
-    body: {} //the member's json object
+    name: String,
+    age: Int,
+    lucky_numbers: []
 }
+
 ```
 
 
@@ -128,20 +134,16 @@ RESPONSE (content_type: Application/JSON):
 ```md
 POST /member
 
-REQUEST (content_type: Application/JSON):
+REQUEST Body (content_type: Application/JSON):
 {
-    body: { //the new member's json object
-		name: String,
-		age: Int,
-		lucky_numbers: []
-	}
+    name: String,
+    age: Int,
+    lucky_numbers: []
 }
 
 RESPONSE (content_type: Application/JSON):
-{	
-	status_code: 200 if success. 400 if bad request (wrong info) screw up, 500 if the server encounter an error
-	done: True
-}
+status_code: 200 if success. 400 if bad request (wrong info) screw up, 500 if the server encounter an error
+body: empty
 ```
 
 
@@ -149,7 +151,7 @@ RESPONSE (content_type: Application/JSON):
 ### 4) DELETE one member
 
 ```md
-POST /member/<int:member_id>
+DELETE /member/<int:member_id>
 
 RESPONSE (content_type: Application/JSON):
 {
