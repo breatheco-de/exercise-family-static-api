@@ -4,7 +4,7 @@
 	"status": "published",
 	"translations": ["es", "us"],
 	"difficulty": "beginner",
-	"technologies": ["flask", "python", "json", "serialization", "data-structures", "rest","api"],
+	"technologies": ["flask", "python", "json", "serialization", "data-structures", "rest","api","apis"],
 	"duration" : 8,
 	"description" : "Create an API to show family members",
 	"talents": [
