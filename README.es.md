@@ -4,7 +4,17 @@
 
 ## 💻 Instalación
 
-Por favor clona este repositorio para comenzar a codificar tu ejercicio o ábrelo en gitpod.io (recomendado).
+
+
+1. Por favor clona este repositorio para comenzar a codificar tu ejercicio o ábrelo en gitpod.io (recomendado).
+
+2. Instala las dependencias del proyecto `$ pipenv install`.
+
+3. Entra dentro del **virtual environment** `$ pipenv shell`
+
+4. Inicio al servidor flask `$ pipenv run start`
+
+5. Prueba que el projecto esta correctamente terminado `$ pipenv run test`
 
 ## 📝 Instrucciones
 
