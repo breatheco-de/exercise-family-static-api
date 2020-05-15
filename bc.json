@@ -3,7 +3,7 @@
 	"slug" : "family-static-api",
 	"status": "published",
 	"translations": ["es", "us"],
-	"preview": "https://github.com/breatheco-de/exercise-family-static-api/blob/master/preview.png?raw=true"
+	"preview": "https://github.com/breatheco-de/exercise-family-static-api/blob/master/preview.png?raw=true",
 	"difficulty": "beginner",
 	"technologies": ["flask", "python", "json", "serialization", "data-structures", "rest","api"],
 	"duration" : 8,
