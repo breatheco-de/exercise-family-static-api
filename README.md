@@ -6,13 +6,13 @@ The Jackson Family needs a static API! We need to build the *data structures* an
 
 1. Please clone the current project to start working your exercise or open it locally or in gitpod.io (recomended).
 
-2. Install the project dependencies by running `pipenv install`.
+2. Install the project dependencies by running `$ pipenv install`.
 
-3. Get inside the virtual environment by running `pipenv shell`
+3. Get inside the virtual environment by running `$ pipenv shell`
 
-4. Start the server by running `pipenv run start`
+4. Start the server by running `$ pipenv run start`
 
-5. Test your code by running `pipenv run test`
+5. Test your code by running `$ pipenv run test`
 
 ## 📝 Instructions
 
