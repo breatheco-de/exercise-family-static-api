@@ -136,9 +136,9 @@ status_code: 200 if success. 400 if bad request (wrong info) screw up, 500 if th
 BODY: //the member's json object
 
 {
-    name: String,
-    age: Int,
-    lucky_numbers: []
+    "first_name": String,
+    "age": Int,
+    "lucky_numbers": List
 }
 
 ```
