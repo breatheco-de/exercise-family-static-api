@@ -116,11 +116,6 @@ RESPONSE BODY (content-type: Application/JSON):
 
 ```
 
-Important: There are two fields that must be calculated on runtime:
-- lucky_numbers is the concatenation of all the lucky numbers from the family members.
-- sum_of_lucky is the sum of all the lucky numbers of the family members.
-
-
 ### 2) Retrieve one member
 Which returns the member of the family where `id == member_id`.
 
@@ -133,6 +128,7 @@ status_code: 200 if success. 400 if bad request (wrong info) screw up, 500 if th
 BODY: //the member's json object
 
 {
+    "id": Int,
     "first_name": String,
     "age": Int,
     "lucky_numbers": List
@@ -151,14 +147,17 @@ REQUEST Body (content_type: Application/JSON):
 {
     name: String,
     age: Int,
-    lucky_numbers: []
+    lucky_numbers: [].
+    id: Int *optional
 }
 
 RESPONSE (content_type: Application/JSON):
 status_code: 200 if success. 400 if bad request (wrong info) screw up, 500 if the server encounter an error
 body: empty
 ```
-
+Keep in mind a post request data dictionary may contain a value for member id.
+- If it does not, your API should randomly generate one when adding as a family members.
+- If it does include it, then that is the value to be used for such end.
 
 
 ### 4) DELETE one member
@@ -177,5 +176,4 @@ RESPONSE (content_type: Application/JSON):
 
 - All requests and reponses should be in content/type: application/json
 - Response codes must be `200` for success, `400` for bad request or `404` for not found.
-- This exercise 
-s not include a database, everything must be done in Runtime (RAM).
+- This exercises do not include a database, everything must be done in Runtime (RAM).
