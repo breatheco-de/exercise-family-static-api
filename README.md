@@ -33,7 +33,7 @@ Test your code by running `$ pipenv run test`
 
 Every **member** of the Jackson family must be a dictionary - equivalent of [Objects Literals in JS](https://www.dyn-web.com/tutorials/object-literal/) - and have these values:
 
-```js
+```python
     + id: Int
     + first_name: String
     + last_name: String (Always Jackson)
@@ -45,40 +45,41 @@ The **family** data-structure will be a class with the following structure:
 ```python
 class Family:
 
-	def __init__(self, last_name):
-		self.last_name = last_name
+    def __init__(self, last_name):
+        self.last_name = last_name
         # example list of members
-		self._members = [{
-			"id": self._generateId(),
-			"first_name": "John"
-		}]
+        self._members = [{
+            "id": self._generateId(),
+            "first_name": "John",
+            "last_name": last_name
+        }]
 
-    	# read-only: Use this method to generate random members ID's when adding members into the list
+    # read-only: Use this method to generate random members ID's when adding members into the list
     def _generateId(self):
         return random.randint(0, 99999999) //import random 
 
-	def add_member(self, member):
+    def add_member(self, member):
         ## you have to implement this method
         ## append the member to the list of _members
-		pass
+        pass
 
-	def delete_member(self, id):
+    def delete_member(self, id):
         ## you have to implement this method
         ## loop the list and delete the member with the given id
-		pass
+        pass
 
-	def update_member(self, id, member):
+    def update_member(self, id, member):
         ## you have to implement this method
         ## loop the list and replace the memeber with the given id
-		pass
+        pass
 
-	def get_member(self, id):
+    def get_member(self, id):
         ## you have to implement this method
         ## loop all the members and return the one with the given id
-		pass
+        pass
 
-	def get_all_members(self):
-		return self._members
+    def get_all_members(self):
+        return self._members
 ```
 
 Note: don't forget to Initialize the class: `jackson_family = FamilyStructure('Jackson')` *before* the routes.
@@ -105,27 +106,31 @@ This API must have 4 endpoints. They all return JSON:
 
 ### 1) Get all family members:
 
+Which returns all members of the family.
+
 ```md
 GET /members
 
-Status_code: 200 if success. 400 if bad request (wrong info) screw up, 500 if the server encounter an error
+status_code: 200 if success. 400 if bad request (wrong info) screw up, 500 if the server encounter an error
 
-RESPONSE BODY (content-type: Application/JSON):
+RESPONSE BODY (content-type: application/json):
 
-[], //Array of members.
+[], // List of members.
 
 ```
 
 ### 2) Retrieve one member
+
 Which returns the member of the family where `id == member_id`.
 
 ```md
 GET /member/<int:member_id>
 
-RESPONSE (content_type: Application/JSON):
+RESPONSE (content_type: application/json):
+
 status_code: 200 if success. 400 if bad request (wrong info) screw up, 500 if the server encounter an error
 
-BODY: //the member's json object
+body: //the member's json object
 
 {
     "id": Int,
@@ -136,40 +141,48 @@ BODY: //the member's json object
 
 ```
 
-
-
 ### 3) Add (POST) new member
+
+Which adds a new member to the family data structure.
 
 ```md
 POST /member
 
-REQUEST Body (content_type: Application/JSON):
+REQUEST BODY (content_type: application/json):
+
 {
-    name: String,
+    first_name: String,
     age: Int,
-    lucky_numbers: [].
+    lucky_numbers: [],
     id: Int *optional
 }
 
-RESPONSE (content_type: Application/JSON):
+RESPONSE (content_type: application/json):
+
 status_code: 200 if success. 400 if bad request (wrong info) screw up, 500 if the server encounter an error
+
 body: empty
 ```
-Keep in mind a post request data dictionary may contain a value for member id.
+
+Keep in mind that POST request data dictionary may contain a key and a value for this new member `id`.
 - If it does not, your API should randomly generate one when adding as a family members.
 - If it does include it, then that is the value to be used for such end.
 
-
 ### 4) DELETE one member
+
+Which deletes a family member with `id == member_id`
 
 ```md
 DELETE /member/<int:member_id>
 
-RESPONSE (content_type: Application/JSON):
-{
-    status_code: 200 if success. 400 if bad request (wrong info) screw up, 500 if the server encounter an error
+RESPONSE (content_type: application/json):
+
+status_code: 200 if success. 400 if bad request (wrong info) screw up, 500 if the server encounter an error
+
+body: {
     done: True
-}
+}    
+
 ```
 
 ## Requirements
