@@ -26,7 +26,7 @@ def test_add_implementation(client):
 	})
     assert response.status_code == 200
 
-@pytest.mark.it("Method POST /member your return an empty response body")
+@pytest.mark.it("Method POST /member your return a NON-EMPTY response body")
 def test_add_empty_reponse_body(client):
     response = client.post('/member', json={
 		"first_name": "Sandra",
@@ -34,7 +34,7 @@ def test_add_empty_reponse_body(client):
         "id": 2,
 		"lucky_numbers": [12,34,33,45,32,12]
 	})
-    assert response.data == b""
+    assert response.data != b""
 
 @pytest.mark.it("Implement method GET /members")
 def test_get_members_exist(client):
