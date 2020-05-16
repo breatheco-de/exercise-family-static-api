@@ -26,11 +26,11 @@
 
 ## Estructuras de datos (Data structures)
 
-Cada **miembro** de la familia Doe debe ser un diccionario, equivalente a [Objetos literales en JS](https://www.dyn-web.com/tutorials/object-literal/) - y tienen estos valores:
+Cada **miembro** de la familia Jackson debe ser un diccionario, equivalente a [Objetos literales en JS](https://www.dyn-web.com/tutorials/object-literal/) - y tienen estos valores:
 ```
     + id: Int
     + first_name: String
-    + last_name: String (Always Doe)
+    + last_name: String (Siempre Jackson)
     + age: Int > 0
     + gender: String
     + lucky_numbers: Array of int
@@ -80,17 +80,17 @@ class Family:
 ## Estos son los miembros iniciales de la familia.
 
 ```md
-John Doe
+John Jackson
 33 Years old
 Male
 Lucky Numbers: 7, 13, 22
 
-Jane Doe
+Jane Jackson
 35 Years old
 Female
 Lucky Numbers: 10, 14, 3
 
-Jimmy Doe
+Jimmy Jackson
 5 Years old
 Male
 Lucky Numbers: 1
@@ -101,7 +101,7 @@ Lucky Numbers: 1
 Esta API debe tener dos endpoints, ambos devuelven JSON:
 
 ### 1) Obten todos los miembros de la familia:
-Lo que devuelve la información de la familia de Doe.. Ejemplo:
+Lo que devuelve la información de la familia de Jackson.. Ejemplo:
 
 ```md
 GET /members
