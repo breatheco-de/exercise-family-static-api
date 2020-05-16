@@ -18,11 +18,11 @@
 
 ## 📝 Instrucciones
 
-- Crea el código necesario para desarrollar los API endpoints descritos más adelante.
-- Los únicos dos archivos que tienes que editar son:
+3) Crea el código necesario para desarrollar los API endpoints descritos más adelante.
+2) Los únicos dos archivos que tienes que editar son:
 	- `src/datastructure.py`: Contiene la estructura de datos `FamilyStructure` que se encarga de manejar la familia.
 	- `src/app.py`: Es el código de tu API, aquí debes agregar los endpoints (rutas) y la logica de programación.
-- Hemos preparado un conjunto de pruebas automatizadas que te darán una idea de si tu código es correcto, ejecute las pruebas escribiendo `$ pipenv run tests` en la línea de comandos (terminal o consola).
+4) Hemos preparado un conjunto de pruebas automatizadas que te darán una idea de si tu código es correcto, ejecute las pruebas escribiendo `$ pipenv run tests` en la línea de comandos (terminal o consola).
 
 ## Estructuras de datos (Data structures)
 
