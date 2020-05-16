@@ -26,7 +26,7 @@ def test_first_three(client):
 def test_add_implementation(client):
     response = client.post('/member', json={
 		"first_name": "Tommy",
-        "id": 1,
+        	"id": 3443,
 		"age": 23,
 		"lucky_numbers": [34,65,23,4,6]
 	})
@@ -37,7 +37,7 @@ def test_add_empty_reponse_body(client):
     response = client.post('/member', json={
 		"first_name": "Sandra",
 		"age": 12,
-        "id": 2,
+        	"id": 4446,
 		"lucky_numbers": [12,34,33,45,32,12]
 	})
     assert response.data != b""
@@ -62,19 +62,19 @@ def test_get_members_returns_list_of_two(client):
 
 @pytest.mark.it("Method GET /member/<int:id> should exist")
 def test_get_single_member_implemented(client):
-    response = client.get('/member/1')
+    response = client.get('/member/3443')
     assert response.status_code == 200
 
 @pytest.mark.it("Method GET /member/<int:id> should return a one single family member in a dictionary format")
 def test_get_single_member_returns_dict(client):
-    response = client.get('/member/1')
+    response = client.get('/member/3443')
     data = json.loads(response.data)
     assert data is not None
     assert isinstance(data, dict)
 
 @pytest.mark.it("The dictionary returned by GET /member/<int:id> should containe one family member with the keys [name,id,age,lucky_numbers]")
 def test_get_single_member_has_keys(client):
-    response = client.get('/member/1')
+    response = client.get('/member/3443')
     data = json.loads(response.data)
 
     assert data is not None
@@ -83,9 +83,9 @@ def test_get_single_member_has_keys(client):
     assert "age" in data
     assert "lucky_numbers" in data
 
-@pytest.mark.it("Method GET /member/1 should return Tommy")
+@pytest.mark.it("Method GET /member/3443 should return Tommy")
 def test_get_first_member_tommy(client):
-    response = client.get('/member/1')
+    response = client.get('/member/3443')
     data = json.loads(response.data)
     assert data is not None
     assert "first_name" in data
@@ -93,11 +93,11 @@ def test_get_first_member_tommy(client):
 
 @pytest.mark.it("Implement method DELETE /member/<int:id> to delete a family member")
 def test_delete_member(client):
-    response = client.delete('/member/1')
+    response = client.delete('/member/3443')
     assert response.status_code == 200
 
-@pytest.mark.it("After deleting the member 1 we called GET /members and it should return a list with just one member")
+@pytest.mark.it("After deleting the member 3443 we called GET /members and it should return a list with 4 members")
 def test_get_members_returns_list_of_two(client):
     response = client.get('/members')
     members = json.loads(response.data)
-    assert len(members) == 1
+    assert len(members) == 4
