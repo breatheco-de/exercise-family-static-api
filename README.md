@@ -37,7 +37,7 @@ Every **member** of the Jackson family must be a dictionary - equivalent of [Obj
 ```js
     + id: Int
     + first_name: String
-    + last_name: String (Always Doe)
+    + last_name: String (Always Jackson)
     + age: Int > 0
     + lucky_numbers: Array of int
 ```
@@ -82,7 +82,7 @@ class Family:
 		return self._members
 ```
 
-Note: don't forget to Initialize the class: `doe_family = Family('Doe')` *before* the routes.
+Note: don't forget to Initialize the class: `jackson_family = FamilyStructure('Jackson')` *before* the routes.
 
 ## These are the initial Family Members
 
@@ -109,16 +109,14 @@ This API must have 4 endpoints. They all return JSON:
 ```md
 GET /members
 
-RESPONSE (content-type: Application/JSON):
-{
-	status_code: 200 if success. 400 if bad request (wrong info) screw up, 500 if the server encounter an error
-    body: { 
-    	members: [], //Array of members.
-		family_name: "", //the family's last name.
-		lucky_numbers: [], //An array with all family member's lucky numbers.
-		sum_of_lucky: Int //Sum of all family member's lucky numbers.
-}
+Status_code: 200 if success. 400 if bad request (wrong info) screw up, 500 if the server encounter an error
+
+RESPONSE BODY (content-type: Application/JSON):
+
+[], //Array of members.
+
 ```
+
 Important: There are two fields that must be calculated on runtime:
 - lucky_numbers is the concatenation of all the lucky numbers from the family members.
 - sum_of_lucky is the sum of all the lucky numbers of the family members.
@@ -180,4 +178,5 @@ RESPONSE (content_type: Application/JSON):
 
 - All requests and reponses should be in content/type: application/json
 - Response codes must be `200` for success, `400` for bad request or `404` for not found.
-- This exercise does not include a database, everything must be done in Runtime (RAM).
+- This exercise 
+s not include a database, everything must be done in Runtime (RAM).
