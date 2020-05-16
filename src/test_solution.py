@@ -15,6 +15,12 @@ def client():
 
         os.close(db_fd)
         os.unlink(app.config['DATABASE'])
+	
+@pytest.mark.it("The Family structure has to be initialized with the 3 members specified in the instructions")
+def test_first_three(client):
+    response = client.get('/members')
+    members = json.loads(response.data)
+    assert len(members) == 2
 
 @pytest.mark.it("Implement method POST /member to add a new member")
 def test_add_implementation(client):
@@ -48,11 +54,11 @@ def test_get_members_returns_list(client):
     assert isinstance(data, list)
 
 
-@pytest.mark.it("We added two members using POST /member,  when calling the GET /members should get a list of length == 2")
+@pytest.mark.it("We added two members using POST /member,  when calling the GET /members should get a list of length == 5")
 def test_get_members_returns_list_of_two(client):
     response = client.get('/members')
     members = json.loads(response.data)
-    assert len(members) == 2
+    assert len(members) == 5
 
 @pytest.mark.it("Method GET /member/<int:id> should exist")
 def test_get_single_member_implemented(client):
