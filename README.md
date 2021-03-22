@@ -2,7 +2,7 @@
 
 The Jackson Family needs a static API! We need to build the *data structures* and create API endpoint to interact with it using Postman.
 
-## ## 🌱  How to start this project
+## 🌱  How to start this project
 
 1. This project comes with the necessary files to start working, but you have two options to start:
 
