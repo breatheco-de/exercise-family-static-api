@@ -70,7 +70,7 @@ class Family:
 
     def update_member(self, id, member):
         ## you have to implement this method
-        ## loop the list and replace the memeber with the given id
+        ## loop the list and replace the member with the given id
         pass
 
     def get_member(self, id):
