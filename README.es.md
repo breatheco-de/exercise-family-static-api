@@ -1,10 +1,10 @@
 # ![alt text](https://assets.breatheco.de/apis/img/images.php?blob&random&cat=icon&tags=breathecode,32) Family Static API
 
-¡La familia "Jackson" necesita una API estática! Necesitamos construir las *estructuras de datos (data structures)* y crear un API endpoint para interactuar con él utilizando [Postman](https://postwoman.io/)(recomendado) o Postman.
+¡La familia "Jackson" necesita una API estática! Necesitamos construir las *estructuras de datos (data structures)* y crear un API endpoint para interactuar con él utilizando [Hoppscotch](https://hoppscotch.io/) (recomendado) o Postman.
 
 ## 💻 Instalación
 
-1. Por favor clona este repositorio para comenzar a codificar tu ejercicio o ábrelo en gitpod.io (recomendado).
+1. Por favor clona este repositorio para comenzar a codificar tu ejercicio o ábrelo en [gitpod.io])https://www.gitpod.io/) (recomendado).
 
 2. Instala las dependencias del proyecto `$ pipenv install`.
 
@@ -12,7 +12,7 @@
 
 4. Inicio al servidor flask `$ pipenv run start`
 
-5. Prueba que el projecto esta correctamente terminado `$ pipenv run test`
+5. Prueba que el proyecto está correctamente terminado `$ pipenv run test`
 
 ## ✅ Autoevaluación
 
@@ -27,7 +27,7 @@ Evalúa tu código con el comando `$ pipenv run test`
 - `src/datastructure.py`: Contiene la estructura de datos `FamilyStructure` que se encarga de manejar la familia.
 - `src/app.py`: Es el código de tu API, aquí debes agregar los endpoints (rutas) y la logica de programación.
 
-3) Hemos preparado un conjunto de pruebas automatizadas que te darán una idea de si tu código es correcto, ejecute las pruebas escribiendo `$ pipenv run tests` en la línea de comandos (terminal o consola).
+3) Hemos preparado un conjunto de pruebas automatizadas que te darán una idea de si tu código es correcto, ejecuta las pruebas escribiendo `$ pipenv run tests` en la línea de comandos (terminal o consola).
 
 ## Estructuras de datos (Data structures)
 
@@ -70,7 +70,7 @@ class Family:
 
     def update_member(self, id, member):
         ## you have to implement this method
-        ## loop the list and replace the memeber with the given id
+        ## loop the list and replace the member with the given id
         pass
 
     def get_member(self, id):
