@@ -4,7 +4,7 @@ The Jackson Family needs a static API! We need to build the *data structures* an
 
 ## 💻 Installation
 
-1. Open the project [with gitpod by clicking here](https://github.com/breatheco-de/exercise-family-static-api), or clone it locally if you need. 
+1. Open the project [with gitpod by clicking here](https://gitpod.io#https://github.com/breatheco-de/exercise-family-static-api), or clone it locally if you need. 
 
 2. Install the project dependencies by running `$ pipenv install`.
 
