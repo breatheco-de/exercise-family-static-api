@@ -4,7 +4,7 @@
 
 ## 💻 Instalación
 
-1. Por favor clona este repositorio para comenzar a codificar tu ejercicio o ábrelo en [gitpod.io])https://www.gitpod.io/) (recomendado).
+1. Por favor clona este repositorio para comenzar a codificar tu ejercicio o ábrelo en [gitpod.io haciendo click aqui](https://www.gitpod.io#https://github.com/breatheco-de/exercise-family-static-api) (recomendado).
 
 2. Instala las dependencias del proyecto `$ pipenv install`.
 
