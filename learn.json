@@ -11,5 +11,7 @@
 	"description" : "Create an API to show family members",
 	"talents": [
 		{ "badge": "identator", "points": 10 }
-	]
+	],
+    "autoPlay": false,
+    "projectType": "project"
 }
