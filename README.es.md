@@ -31,7 +31,7 @@ Evalúa tu código con el comando `$ pipenv run test`
 
 ## Estructuras de datos (Data structures)
 
-Cada **miembro** de la familia Jackson debe ser un diccionario, equivalente a [Objetos literales en JS](https://www.dyn-web.com/tutorials/object-literal/) - y tienen estos valores:
+Cada **miembro** de la familia Jackson debe ser un diccionario, equivalente a [Objetos literales en JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects) - y tienen estos valores:
 
 ```python
     + id: Int
