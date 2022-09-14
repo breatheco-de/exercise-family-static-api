@@ -31,7 +31,7 @@ Test your code by running `$ pipenv run test`
 
 ## Data structures
 
-Every **member** of the Jackson family must be a dictionary - equivalent of [Objects Literals in JS](https://www.dyn-web.com/tutorials/object-literal/) - and have these values:
+Every **member** of the Jackson family must be a dictionary - equivalent of [Objects Literals in JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects) - and have these values:
 
 ```python
     + id: Int
