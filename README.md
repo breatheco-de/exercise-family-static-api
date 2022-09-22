@@ -1,5 +1,6 @@
-# ![alt text](https://assets.breatheco.de/apis/img/images.php?blob&random&cat=icon&tags=breathecode,32) Family Static API
-
+<!-- hide -->
+# Family Static API
+<!-- endhide -->
 The Jackson Family needs a static API! We need to build the *data structures* and create API endpoint to interact with it using Postman.
 
 ## 💻 Installation
