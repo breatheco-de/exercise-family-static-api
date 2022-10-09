@@ -27,7 +27,7 @@ Evalúa tu código con el comando `$ pipenv run test`
 - `src/datastructure.py`: Contiene la estructura de datos `FamilyStructure` que se encarga de manejar la familia.
 - `src/app.py`: Es el código de tu API, aquí debes agregar los endpoints (rutas) y la logica de programación.
 
-3) Hemos preparado un conjunto de pruebas automatizadas que te darán una idea de si tu código es correcto, ejecuta las pruebas escribiendo `$ pipenv run tests` en la línea de comandos (terminal o consola).
+3) Hemos preparado un conjunto de pruebas automatizadas que te darán una idea de si tu código es correcto, ejecuta las pruebas escribiendo `$ pipenv run test` en la línea de comandos (terminal o consola).
 
 ## Estructuras de datos (Data structures)
 

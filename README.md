@@ -28,7 +28,7 @@ Test your code by running `$ pipenv run test`
 - `src/datastructure.py`: Contains the class with the rules on how to manage the fammily members.  
 - `src/app.py`: Contains the API, it uses the Family as datastructure. 
 	
-3) We have prepared a set of automated tests that will give you an idea if your code is correct, run the tests by typing `$ pipenv run tests` on the command line.  
+3) We have prepared a set of automated tests that will give you an idea if your code is correct, run the tests by typing `$ pipenv run test` on the command line.  
 
 ## Data structures
 
