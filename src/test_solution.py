@@ -32,7 +32,7 @@ def test_add_implementation(client):
 	})
     assert response.status_code == 200
 
-@pytest.mark.it("Method POST /member should return an EMPTY response body")
+@pytest.mark.it("Method POST /member should return something, NOT EMPTY")
 def test_add_empty_reponse_body(client):
     response = client.post('/member', json={
 		"first_name": "Sandra",
