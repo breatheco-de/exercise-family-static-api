@@ -161,7 +161,7 @@ REQUEST BODY (content_type: application/json):
 
 RESPONSE (content_type: application/json):
 
-status_code: 200 if success. 400 if anbad request (wrong info) screw up, 500 if the server encounters an error
+status_code: 200 if success. 400 if a bad request (wrong info) screw up, 500 if the server encounters an error
 
 body: empty
 ```
