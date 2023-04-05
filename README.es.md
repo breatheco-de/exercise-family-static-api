@@ -1,4 +1,6 @@
-# ![alt text](https://assets.breatheco.de/apis/img/images.php?blob&random&cat=icon&tags=breathecode,32) Family Static API
+<!--hide-->
+# API Estática Familiar
+<!--endhide-->
 
 ¡La familia "Jackson" necesita una API estática! Necesitamos construir las *estructuras de datos (data structures)* y crear un API endpoint para interactuar con él utilizando [Hoppscotch](https://hoppscotch.io/) (recomendado) o Postman.
 
@@ -104,7 +106,7 @@ Lucky Numbers: 1
 
 Esta API debe tener dos endpoints, ambos devuelven JSON:
 
-### 1) Obten todos los miembros de la familia:
+### 1) Obtén todos los miembros de la familia:
 
 Devuelve todos los miembros de la familia.
 
@@ -154,7 +156,7 @@ REQUEST BODY (content_type: application/json):
     first_name: String,
     age: Int,
     lucky_numbers: [],
-    id: Int *opcional
+    id: Int *optional
 }
 
 RESPONSE (content_type: application/json):

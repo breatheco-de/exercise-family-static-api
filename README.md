@@ -1,6 +1,7 @@
 <!-- hide -->
 # Family Static API
 <!-- endhide -->
+
 The Jackson Family needs a static API! We need to build the *data structures* and create API endpoint to interact with it using Postman.
 
 ## 💻 Installation
@@ -25,14 +26,14 @@ Test your code by running `$ pipenv run test`
 
 2) The only two files you have to edit are:  
 
-- `src/datastructure.py`: Contains the class with the rules on how to manage the fammily members.  
-- `src/app.py`: Contains the API, it uses the Family as datastructure. 
+- `src/datastructure.py`: Contains the class with the rules on how to manage the family members.  
+- `src/app.py`: Contains the API, it uses the Family as data structure. 
 	
 3) We have prepared a set of automated tests that will give you an idea if your code is correct, run the tests by typing `$ pipenv run test` on the command line.  
 
 ## Data structures
 
-Every **member** of the Jackson family must be a dictionary - equivalent of [Objects Literals in JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects) - and have these values:
+Every **member** of the Jackson family must be a dictionary - the equivalent of [Objects Literals in JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects) - and have these values:
 
 ```python
     + id: Int
@@ -83,7 +84,7 @@ class Family:
         return self._members
 ```
 
-Note: don't forget to Initialize the class: `jackson_family = FamilyStructure('Jackson')` *before* the routes.
+Note: don't forget to initialize the class: `jackson_family = FamilyStructure('Jackson')` *before* the routes.
 
 ## These are the initial Family Members
 
@@ -160,14 +161,14 @@ REQUEST BODY (content_type: application/json):
 
 RESPONSE (content_type: application/json):
 
-status_code: 200 if success. 400 if bad request (wrong info) screw up, 500 if the server encounter an error
+status_code: 200 if success. 400 if a bad request (wrong info) screw up, 500 if the server encounters an error
 
 body: empty
 ```
 
 Keep in mind that POST request data dictionary may contain a key and a value for this new member `id`.
-- If it does not, your API should randomly generate one when adding as a family members.
-- If it does include it, then that is the value to be used for such end.
+- If it does not, your API should randomly generate one when adding family members.
+- If it does include it, that is the value to be used for such end.
 
 ### 4) DELETE one member
 
@@ -178,7 +179,7 @@ DELETE /member/<int:member_id>
 
 RESPONSE (content_type: application/json):
 
-status_code: 200 if success. 400 if bad request (wrong info) screw up, 500 if the server encounter an error
+status_code: 200 if success. 400 if a bad request (wrong info) screw up, 500 if the server encounters an error
 
 body: {
     done: True
@@ -188,6 +189,6 @@ body: {
 
 ## Requirements
 
-- All requests and reponses should be in content/type: application/json
+- All requests and responses should be in content/type: application/json
 - Response codes must be `200` for success, `400` for bad request or `404` for not found.
-- This exercises do not include a database, everything must be done in Runtime (RAM).
+- These exercises do not include a database, everything must be done in Runtime (RAM).
