@@ -4,9 +4,21 @@
 
 The Jackson Family needs a static API! We need to build the *data structures* and create API endpoint to interact with it using Postman.
 
-## 💻 Installation
+## 🌱  How to start this project
 
-1. Open the project [with gitpod by clicking here](https://gitpod.io#https://github.com/breatheco-de/exercise-family-static-api), or clone it locally if you need. 
+This project comes with the necessary files to start working immediately.
+
+We recommend opening this very same repository using a provisioning tool like [Codespaces](https://4geeks.com/lesson/what-is-github-codespaces) (recommended) or [Gitpod](https://4geeks.com/lesson/how-to-use-gitpod). Alternatively, you can clone it on your local computer using the `git clone` command.
+
+This is the repository you need to open:
+
+```txt
+https://github.com/breatheco-de/exercise-family-static-api
+```
+
+**👉 Please follow these steps on** [how to start a coding project](https://4geeks.com/lesson/how-to-start-a-project).
+
+## Installation
 
 2. Install the project dependencies by running `$ pipenv install`.
 
