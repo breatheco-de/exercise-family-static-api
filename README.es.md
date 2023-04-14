@@ -12,7 +12,7 @@ Recomendamos abrir este mismo repositorio usando una herramienta de aprovisionam
 
 Este es el repositorio que necesitas abrir:
 
-```
+```txt
 https://github.com/breatheco-de/exercise-family-static-api
 ```
 
