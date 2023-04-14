@@ -18,7 +18,7 @@ https://github.com/breatheco-de/exercise-family-static-api
 
 **👉 Please follow these steps on** [how to start a coding project](https://4geeks.com/lesson/how-to-start-a-project).
 
-## Installation
+## 💻 Installation
 
 2. Install the project dependencies by running `$ pipenv install`.
 
