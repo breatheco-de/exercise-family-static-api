@@ -4,7 +4,6 @@ ports:
     - port: 3000
       onOpen: open-preview
       visibility: public
-      visibility: public
 tasks:
   - init: >
       pipenv install
