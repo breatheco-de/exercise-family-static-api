@@ -4,17 +4,27 @@
 
 ¡La familia "Jackson" necesita una API estática! Necesitamos construir las *estructuras de datos (data structures)* y crear un API endpoint para interactuar con él utilizando [Hoppscotch](https://hoppscotch.io/) (recomendado) o Postman.
 
+## 🌱 Cómo comenzar este proyecto
+
+Este proyecto viene con los archivos necesarios para comenzar a trabajar de inmediato.
+
+Recomendamos abrir este mismo repositorio usando una herramienta de aprovisionamiento como [Codespaces](https://4geeks.com/lesson/what-is-github-codespaces) (recomendado) o [Gitpod](https://4geeks.com/es/lesson/como-utilizar-gitpod). Alternativamente, puedes clonarlo en tu computadora local usando el comando `git clone`.
+
+Este es el repositorio que necesitas abrir:
+
+```txt
+https://github.com/breatheco-de/exercise-family-static-api
+```
+
 ## 💻 Instalación
 
-1. Por favor clona este repositorio para comenzar a codificar tu ejercicio o ábrelo en [gitpod.io haciendo click aqui](https://www.gitpod.io#https://github.com/breatheco-de/exercise-family-static-api) (recomendado).
+1. Instala las dependencias del proyecto `$ pipenv install`.
 
-2. Instala las dependencias del proyecto `$ pipenv install`.
+2. Entra dentro del **virtual environment** `$ pipenv shell`
 
-3. Entra dentro del **virtual environment** `$ pipenv shell`
+3. Inicio al servidor flask `$ pipenv run start`
 
-4. Inicio al servidor flask `$ pipenv run start`
-
-5. Prueba que el proyecto está correctamente terminado `$ pipenv run test`
+4. Prueba que el proyecto está correctamente terminado `$ pipenv run test`
 
 ## ✅ Autoevaluación
 
