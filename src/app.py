@@ -23,42 +23,35 @@ def handle_invalid_usage(error):
 def sitemap():
     return generate_sitemap(app)
 
+@app.route('/members', methods=['GET'])
+def handle_get_all_members():
+    members = jackson_family.get_all_members()
+    return jsonify(members)
+
+
 @app.route('/member', methods=['POST'])
 def handle_add_member():
-    family_data = request.get_json(force=True)
+    new_member = request.get_json(force=True)
+    jackson_family.add_member(new_member)
 
-    new_family_member = {
-        "first_name": family_data.get('first_name', ""),
-        "last_name": "Jackson",
-        "id": family_data.get('id', ""),
-        "age": family_data.get('age', 0),
-        "lucky_numbers": family_data.get('lucky_numbers', [])
-    }
+    return jsonify({"message": "New family member added!"}), 200
 
-    jackson_family.add_member(new_family_member)
-    return jsonify({"message": "New family member added!"})
+@app.route('/member/<int:id>', methods=['GET'])
+def handle_get_member(id):
+    member = jackson_family.get_member(id)
+    if member is not None:
+        return jsonify(member), 200
+    else:
+        return jsonify({"error": "Family member not found"}), 404
 
 @app.route('/member/<int:id>', methods=['DELETE'])
 def handle_delete_member(id):
     member = jackson_family.get_member(id)
     if member is not None:
         jackson_family.delete_member(id)
-        return jsonify({"message": f"Family member {member['first_name']} was deleted"})
+        return jsonify({"message": f"Family member {member['first_name']} was deleted"}), 200
     else:
         return jsonify({"error": "Family member not found"}), 404
-
-@app.route('/member/<int:id>', methods=['GET'])
-def handle_get_member(id):
-    member = jackson_family.get_member(id)
-    if member is not None:
-        return jsonify(member)
-    else:
-        return jsonify({"error": "Family member not found"}), 404
-
-@app.route('/members', methods=['GET'])
-def handle_get_all_members():
-    members = jackson_family.get_all_members()
-    return jsonify(members)
 
 # This only runs if `$ python src/app.py` is executed
 if __name__ == '__main__':

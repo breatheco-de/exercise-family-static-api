@@ -13,7 +13,26 @@ class FamilyStructure:
         self.last_name = last_name
 
         # example list of members
-        self._members = []
+        self._members = [
+            {
+                "fist_name": "John",
+                "last_name": "Jackson",
+                "age": 33,
+                "lucky_umbers": [7, 13, 22]
+            },
+            {
+                "fist_name": "Jane",
+                "last_name": "Jackson",
+                "age": 35,
+                "lucky_umbers": [10, 14, 3]
+            },
+            {
+                "fist_name": "Jimmy",
+                "last_name": "Jackson",
+                "age": 5,
+                "lucky_umbers": [1]
+            }
+        ]
 
     # read-only: Use this method to generate random members ID's when adding members into the list
     def _generateId(self):
@@ -29,14 +48,14 @@ class FamilyStructure:
     def delete_member(self, id):
         # fill this method and update the return
         for member in self._members:
-            if member.id == id:
+            if member.id == int(id):
                 self._members.remove(member)
         pass
 
     def get_member(self, id):
         # fill this method and update the return
         for member in self._members:
-             if member.id == id:
+             if member.id == int(id):
                 return member
         pass
 
