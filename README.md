@@ -2,7 +2,7 @@
 # Family Static API
 <!-- endhide -->
 
-The Jackson Family needs a static API! We need to build the *data structures* and create the API endpoints to interact with it using Postman.
+The Jackson Family needs a static API! We need to build the *data structures* and create the API endpoints to interact with it using [Hoppscotch](https://hoppscotch.io/) (recommended) or Postman.
 
 ## 🌱 How to start this project
 
