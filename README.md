@@ -32,14 +32,14 @@ https://github.com/breatheco-de/exercise-family-static-api
 
 ## 📝 Instructions
 
-1) Create the code needed to implement the API endpoints described further below.  
+1. Create the code needed to implement the API endpoints described further below.  
 
-2) The only two files you have to edit are:  
+2. The only two files you have to edit are:  
 
 - `src/datastructure.py`: Contains the class with the rules on how to manage the family members.  
 - `src/app.py`: Contains the API, it uses the Family as data structure. 
 
-3) We have prepared a set of automated tests that will give you an idea if your code is correct. Run the tests by typing `$ pipenv run test` on the command line.  
+3. We have prepared a set of automated tests that will give you an idea if your code is correct. Run the tests by typing `$ pipenv run test` on the command line.  
 
 ## Data structures
 
