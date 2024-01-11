@@ -128,7 +128,7 @@ status_code: 200 if success. 400 if bad request (wrong info). 500 if the server 
 
 RESPONSE BODY (content-type: application/json):
 
-[]  # List of members
+[]  <!--- List of members -->
 ```
 
 ### 2) Retrieve one member
@@ -143,7 +143,7 @@ RESPONSE (content_type: application/json):
 status_code: 200 if success. 400 if bad request (wrong info). 500 if the server encounters an error
 
 
-body:  <!---# The member's json object--> 
+body:  <!--- The member's json object --> 
 {
     "id": Int,
     "first_name": String,
@@ -165,7 +165,7 @@ REQUEST BODY (content_type: application/json):
     first_name: String,
     age: Int,
     lucky_numbers: [],
-    id: Int  # randomize function
+    id: Int  <!--- randomize function -->
 }
 
 RESPONSE (content_type: application/json):
