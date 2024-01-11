@@ -184,7 +184,7 @@ DELETE /member/<int:member_id>
 
 RESPONSE (content_type: application/json):
 
-status_code: 200 si fue eliminado con éxito, 400 si no lo fue porque el cliente (solicitud) falla, 500 si el servidor encuentra un error
+status_code 200 si se realizó con éxito, 400 si hubo un error por parte del cliente, 500 si el servidor encuentra un error
 
 body: {
     done: True
