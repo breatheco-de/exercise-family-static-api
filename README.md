@@ -67,13 +67,13 @@ class Family:
             "last_name": last_name
         }]
 
-    # read-only: Use this method to generate random member IDs when adding members into the list
+    # read-only: Use this method to generate random member ids when adding members into the list
     def _generateId(self):
         return random.randint(0, 99999999)  # import random 
 
     def add_member(self, member):
         ## You have to implement this method
-        ## Append the member to the list of members
+        ## Append the member to the list of _members
         pass
 
     def delete_member(self, id):
@@ -83,7 +83,7 @@ class Family:
 
     def update_member(self, id, member):
         ## You have to implement this method
-        ## Loop the list and replace the member with the given id
+        ## Loop the list and update the member with the given id
         pass
 
     def get_member(self, id):
@@ -142,7 +142,7 @@ RESPONSE (content_type: application/json):
 
 status_code: 200 if success. 400 if bad request (wrong info). 500 if the server encounters an error
 
-body:  # the member's json object
+body:  [//]: # (This may be the most platform independent comment) # The member's json object
 {
     "id": Int,
     "first_name": String,
