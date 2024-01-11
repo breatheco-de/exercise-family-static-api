@@ -142,7 +142,10 @@ RESPONSE (content_type: application/json):
 
 status_code: 200 if success. 400 if bad request (wrong info). 500 if the server encounters an error
 
-body:  [//]: # (This may be the most platform independent comment) # The member's json object
+
+[comment]: # (This actually is the most platform independent comment)
+
+body:  [comment]: # (This actually is the most platform independent comment)# The member's json object
 {
     "id": Int,
     "first_name": String,
