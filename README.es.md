@@ -1,161 +1,200 @@
-# ![alt text](https://assets.breatheco.de/apis/img/images.php?blob&random&cat=icon&tags=breathecode,32) Family Static API
+<!--hide-->
+# API Estática Familiar
+<!--endhide-->
 
-¡La familia "Jackson" necesita una API estática! Necesitamos construir las *estructuras de datos (data structures)* y crear un API endpoint para interactuar con él utilizando ![Postman](https://postwoman.io/) o Postman.
+¡La familia "Jackson" necesita una API estática! Necesitamos construir las *estructuras de datos (data structures)* y crear un API endpoint para interactuar con él utilizando [Hoppscotch](https://hoppscotch.io/) (recomendado) o Postman.
+
+## 🌱 Cómo comenzar este proyecto
+
+Este proyecto viene con los archivos necesarios para comenzar a trabajar de inmediato.
+
+Recomendamos abrir este mismo repositorio usando un entorno de desarrollo como [Codespaces](https://4geeks.com/es/lesson/tutorial-de-github-codespaces) (recomendado) o [Gitpod](https://4geeks.com/es/lesson/como-utilizar-gitpod). Alternativamente, puedes clonarlo en tu computadora local usando el comando `git clone`.
+
+Este es el repositorio que necesitas abrir:
+
+```txt
+https://github.com/breatheco-de/exercise-family-static-api
+```
 
 ## 💻 Instalación
 
-Por favor clona este repositorio para comenzar a codificar tu ejercicio o ábrelo en gitpod.io (recomendado).
+1. Instala las dependencias del proyecto `$ pipenv install`.
+
+2. Entra dentro del *virtual environment* `$ pipenv shell`
+
+3. Inicia el servidor flask `$ pipenv run start`
+
+## ✅ Autoevaluación
+
++ Evalúa tu código con el comando `$ pipenv run test`
 
 ## 📝 Instrucciones
 
-- Crea el código necesario para desarrollar los API endpoints descritos más adelante.
-- Los únicos dos archivos que tienes que editar son:
-	- `src/datastructure.py`: Contiene la estructura de datos `FamilyStructure` que se encarga de manejar la familia.
-	- `src/app.py`: Es el código de tu API, aquí debes agregar los endpoints (rutas) y la logica de programación.
-- Hemos preparado un conjunto de pruebas automatizadas que te darán una idea de si tu código es correcto, ejecute las pruebas escribiendo `$ pipenv run tests` en la línea de comandos (terminal o consola).
+1. Crea el código necesario para desarrollar los API endpoints descritos más adelante.
+
+2. Los únicos dos archivos que tienes que editar son:
+
+- `src/datastructure.py`: Contiene la estructura de datos `FamilyStructure` que se encarga de manejar la familia.
+- `src/app.py`: Es el código de tu API, aquí debes agregar los endpoints (rutas) y la lógica de programación.
+
+3. Hemos preparado un conjunto de pruebas automatizadas que te darán una idea de si tu código es correcto, ejecuta las pruebas escribiendo `$ pipenv run test` en la línea de comandos (terminal o consola).
 
 ## Estructuras de datos (Data structures)
 
-Cada **miembro** de la familia Doe debe ser un diccionario, equivalente a [Objetos literales en JS](https://www.dyn-web.com/tutorials/object-literal/) - y tienen estos valores:
+Cada **miembro** de la familia Jackson debe ser un diccionario, equivalente a [Objetos literales en JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects) - y tienen estos valores:
+
+```python
++ id: Int
++ first_name: String
++ last_name: String (Siempre Jackson)
++ age: Int > 0
++ lucky_numbers: Array of int
 ```
-    + id: Int
-    + first_name: String
-    + last_name: String (Always Doe)
-    + age: Int > 0
-    + gender: String
-    + lucky_numbers: Array of int
-```
+
 La estructura de datos **family** será una clase con la siguiente estructura:
 
 ```python
 class Family:
 
-	def __init__(self, last_name):
-		self.last_name = last_name
-        # example list of members
+    def __init__(self, last_name):
+        self.last_name = last_name
+        # ejemplo de lista de miembros
         self._members = [{
             "id": self._generateId(),
-            "first_name": "John"
-            "last_name": this.last_name
+            "first_name": "John",
+            "last_name": last_name
         }]
 
-    # read-only: Use this method to generate random members ID's when adding members into the list
+    # solo lectura: Utiliza este método para generar ids aleatorias de miembros al agregarlos a la lista
     def _generateId(self):
-        return randint(0, 99999999)
+        return randint(0, 99999999)  # import random 
 
-	def add_member(self, member):
-        ## you have to implement this method
-        ## append the member to the list of _members
-		pass
+    def add_member(self, member):
+        ## Debes implementar este método
+        ## Agrega un nuevo miembro a la lista de _members
+        pass
 
-	def delete_member(self, id):
-        ## you have to implement this method
-        ## loop the list and delete the member with the given id
-		pass
+    def delete_member(self, id):
+        ## Debes implementar este método
+        ## Recorre la lista y elimina el miembro con el id proporcionado
+        pass
 
-	def update_member(self, id, member):
-        ## you have to implement this method
-        ## loop the list and replace the memeber with the given id
-		pass
+    def update_member(self, id, member):
+        ## Debes implementar este método
+        ## Recorre la lista y actualiza el miembro con el id proporcionado
+        pass
 
-	def get_member(self, id):
-        ## you have to implement this method
-        ## loop all the members and return the one with the given id
-		pass
+    def get_member(self, id):
+        ## Debes implementar este método
+        ## Recorre la lista y obtén el miembro con el id proporcionado
+        pass
 
-	def get_all_members(self, id):
-		return self._members
+    def get_all_members(self, id):
+        return self._members
 ```
+
+Nota: no olvides inicializar la clase: `jackson_family = FamilyStructure('Jackson')` *antes* de las rutas.
 
 ## Estos son los miembros iniciales de la familia.
 
 ```md
-John Doe
+John Jackson
 33 Years old
-Male
 Lucky Numbers: 7, 13, 22
 
-Jane Doe
+Jane Jackson
 35 Years old
-Female
 Lucky Numbers: 10, 14, 3
 
-Jimmy Doe
+Jimmy Jackson
 5 Years old
-Male
 Lucky Numbers: 1
 ```
 
 ## Endpoints
 
-Esta API debe tener dos endpoints, ambos devuelven JSON:
+Esta API debe tener 4 endpoints, todos devuelven JSON:
 
-### 1) Obten todos los miembros de la familia:
-Lo que devuelve la información de la familia de Doe.. Ejemplo:
+### 1) Obtén todos los miembros de la familia:
+
+Devuelve todos los miembros de la familia.
 
 ```md
 GET /members
 
-RESPONSE (Application/JSON):
+status_code 200 si se realizó con éxito, 400 si hubo un error por parte del cliente, 500 si el servidor encuentra un error
 
-    código de estado: 200 si se agregó con éxito, 400 si no lo hace porque el cliente (solicitud) falla, 500 si el servidor encuentra un error
-    content-type: Application/JSON
-    body: un Objeto JSON que contiene:
-        - miembros: Arreglo de miembros.
-        - family_name: El apellido de la familia.
-        - lucky_numbers: Una matriz con todos los números de la suerte de los miembros de la familia.
-        - sum_of_lucky: Suma de todos los números de la suerte de los miembros de la familia.
+RESPONSE BODY (content-type: application/json):
+
+[]  <!--- Lista de miembros de la familia -->
 ```
-Important: Hay dos campos que deben calcularse en tiempo de ejecución:
-- lucky_numbers es la concatenación de todos los números de la suerte de los miembros de la familia
-- sum_of_lucky es la suma de todos los números de la suerte de los miembros de la familia.
-
 
 ### 2) Recupera solo un miembro
 
+Devuelve el miembro de la familia para el cual `id == member_id`.
+
 ```md
 GET /member/<int:member_id>
-Lo que retorna el miembro de la familia donde`id == member_id`. E, g:
 
-RESPONSE (application/json):
+RESPONSE (content_type: application/json):
 
-    código de estado: 200 si se agregó con éxito, 400 si no lo hace porque el cliente (solicitud) falla, 500 si el servidor encuentra un error
-    content_type: Application/JSON
-    body: the member json object
+status_code 200 si se realizó con éxito, 400 si hubo un error por parte del cliente, 500 si el servidor encuentra un error
+
+body:  <!--- el objeto json del miembro de la familia --> 
+{
+    "id": Int,
+    "first_name": String,
+    "age": Int,
+    "lucky_numbers": List
+}
 ```
-
-
 
 ### 3) Añadir (POST) un miembro
 
+Agrega un nuevo miembro a la estructura de datos de la familia.
+
 ```md
 POST /member
-Lo que agrega un nuevo miembro a la estructura de datos de la familia
 
-RESPONSE (application/json):
+REQUEST BODY (content_type: application/json):
+{
+    first_name: String,
+    age: Int,
+    lucky_numbers: [],
+    id: Int <!--- función número aleatorio -->
+}
 
-    código de estado: 200 si se agregó con éxito, 400 si no lo hace porque el cliente (solicitud) falla, 500 si el servidor encuentra un error
-    content_type: Application/JSON
-    body: the member json object
+RESPONSE (content_type: application/json):
+
+status_code 200 si se realizó con éxito, 400 si hubo un error por parte del cliente, 500 si el servidor encuentra un error
+
+body: vacío
 ```
 
-
+Ten en cuenta que el diccionario que envía la solicitud POST puede contener una propiedad y un valor para el `id` del miembro a crear.
+- Si no lo incluye, tu API debe generar un `id` aleatorio al agregarlo a la familia.
+- Si lo incluye, entonces este es el valor que deberás usar como `id` al agregarlo.
 
 ### 4) ELIMINA un miembro
 
+Elimina el miembro de la familia para el cual `id == member_id`.
+
 ```md
 DELETE /member/<int:member_id>
-Que elimina un miembro dado por el ID dado
 
-RESPONSE (application/json):
+RESPONSE (content_type: application/json):
 
-    status_code: 200 if successfully deleted, 400 if it doesn't because the client-side (request) screw up, 500 if the server encouner an error
-    content_type: Application/JSON
-    body: the member json object
+status_code 200 si se realizó con éxito, 400 si hubo un error por parte del cliente, 500 si el servidor encuentra un error
+
+body: {
+    done: True
+}
 ```
 
 ## Requisitos tecnológicos
 
 - Todas las solicitudes y respuestas deben estar en content/type: application/json
-- Los códigos de respuesta deben ser `200` para tener éxito,` 400` para una solicitud incorrecta o `404` para no encontrados.
-- Este ejercicio no incluye una base de datos, todo se debe hacer en la memoria RAM.
+- Los códigos de respuesta deben ser `200` para solicitudes exitosas, `400` para una solicitud incorrecta o `404` para no encontrados.
+- Este ejercicio no incluye una base de datos, todo se debe hacer en durante el tiempo de ejecución del programa (memoria RAM).
+
+Este y otros proyectos son usados para [aprender a programar](https://4geeksacademy.com/es/aprender-a-programar/aprender-a-programar-desde-cero) por parte de los alumnos de 4Geeks Academy [Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) realizado por [Alejandro Sánchez](https://twitter.com/alesanchezr) y muchos otros contribuyentes. Conoce más sobre nuestros [Cursos de Programación](https://4geeksacademy.com/es/curso-de-programacion-desde-cero?lang=es) para convertirte en [Full Stack Developer](https://4geeksacademy.com/es/coding-bootcamps/desarrollador-full-stack/?lang=es), o nuestro [Data Science Bootcamp](https://4geeksacademy.com/es/coding-bootcamps/curso-datascience-machine-learning).
