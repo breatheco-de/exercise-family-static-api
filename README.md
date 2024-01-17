@@ -1,85 +1,114 @@
-# ![alt text](https://assets.breatheco.de/apis/img/images.php?blob&random&cat=icon&tags=breathecode,32) Family Static API
+<!-- hide -->
+# Family Static API
+<!-- endhide -->
 
-The Jackson Family needs a static API! We need to build the *data structures* and create API endpoint to interact with it using Postman.
+The Jackson Family needs a static API! We need to build the *data structures* and create the API endpoints to interact with it using [Hoppscotch](https://hoppscotch.io/) (recommended) or Postman.
+
+## 🌱 How to start this project
+
+This project comes with the necessary files to start working immediately.
+
+We recommend opening this very same repository using a provisioning tool like [Codespaces](https://4geeks.com/lesson/what-is-github-codespaces) (recommended) or [Gitpod](https://4geeks.com/lesson/how-to-use-gitpod). Alternatively, you can clone it on your local computer using the `git clone` command.
+
+This is the repository you need to open:
+
+```txt
+https://github.com/breatheco-de/exercise-family-static-api
+```
+
+**👉 Please follow these steps on** [how to start a coding project](https://4geeks.com/lesson/how-to-start-a-project).
 
 ## 💻 Installation
 
-Please clone the current project to start working your exercise or open it locally or in gitpod.io (recomended)
+1. Install the project dependencies by running `$ pipenv install`
+
+2. Get inside the virtual environment by running `$ pipenv shell`
+
+3. Start the server by running `$ pipenv run start`
+
+## ✅ Automatic grading
+
++ Test your code by running `$ pipenv run test`
 
 ## 📝 Instructions
 
-- Create the code needed to implement the API endpoints described further below.
-- The only two files you have to edit are: 
-	- `src/datastructure.py`: Contains the class with the rules on how to manage the fammily members.
-	- `src/app.py`: Contains the API, it uses the Family as datastructure
-- We have prepared a set of automated tests that will give you an idea if your code is correct, run the tests by typing `$ pipenv run tests` on the command line.
+1. Create the code needed to implement the API endpoints described further below.  
+
+2. The only two files you have to edit are:  
+
+- `src/datastructure.py`: Contains the class with the rules on how to manage the family members.  
+- `src/app.py`: Contains the API, it uses the Family as data structure. 
+
+3. We have prepared a set of automated tests that will give you an idea if your code is correct. Run the tests by typing `$ pipenv run test` on the command line.  
 
 ## Data structures
 
-Every **member** of the Doe family must be a dictionary - equivalent of [Objects Literals in JS](https://www.dyn-web.com/tutorials/object-literal/) - and have these values:
+Every **member** of the Jackson family must be a dictionary - the equivalent of [Objects Literals in JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects) - and have these values:
 
-```js
-    + id: Int
-    + first_name: String
-    + last_name: String (Always Doe)
-    + age: Int > 0
-    + lucky_numbers: Array of int
+```python
++ id: Int
++ first_name: String
++ last_name: String (Always Jackson)
++ age: Int > 0
++ lucky_numbers: Array of int
 ```
+
 The **family** data-structure will be a class with the following structure:
 
 ```python
 class Family:
 
-	def __init__(self, last_name):
-		self.last_name = last_name
+    def __init__(self, last_name):
+        self.last_name = last_name
         # example list of members
-		self._members = [{
-			"id": self._generateId(),
-			"first_name": "John"
-		}]
+        self._members = [{
+            "id": self._generateId(),
+            "first_name": "John",
+            "last_name": last_name
+        }]
 
-    	# read-only: Use this method to generate random members ID's when adding members into the list
+    # read-only: Use this method to generate random member ids when adding members into the list
     def _generateId(self):
-        return random.randint(0, 99999999) //import random 
+        return random.randint(0, 99999999)  # import random 
 
-	def add_member(self, member):
-        ## you have to implement this method
-        ## append the member to the list of _members
-		pass
+    def add_member(self, member):
+        ## You have to implement this method
+        ## Append the member to the list of _members
+        pass
 
-	def delete_member(self, id):
-        ## you have to implement this method
-        ## loop the list and delete the member with the given id
-		pass
+    def delete_member(self, id):
+        ## You have to implement this method
+        ## Loop the list and delete the member with the given id
+        pass
 
-	def update_member(self, id, member):
-        ## you have to implement this method
-        ## loop the list and replace the memeber with the given id
-		pass
+    def update_member(self, id, member):
+        ## You have to implement this method
+        ## Loop the list and update the member with the given id
+        pass
 
-	def get_member(self, id):
-        ## you have to implement this method
-        ## loop all the members and return the one with the given id
-		pass
+    def get_member(self, id):
+        ## You have to implement this method
+        ## Loop all the members and return the one with the given id
+        pass
 
-	def get_all_members(self):
-		return self._members
+    def get_all_members(self):
+        return self._members
 ```
 
-Note: don't forget to Initialize the class: `doe_family = Family('Doe')` *before* the routes.
+Note: don't forget to initialize the class: `jackson_family = FamilyStructure('Jackson')` *before* the routes.
 
 ## These are the initial Family Members
 
 ```md
-John Doe
+John Jackson
 33 Years old
 Lucky Numbers: 7, 13, 22
 
-Jane Doe
+Jane Jackson
 35 Years old
 Lucky Numbers: 10, 14, 3
 
-Jimmy Doe
+Jimmy Jackson
 5 Years old
 Lucky Numbers: 1
 ```
@@ -90,78 +119,87 @@ This API must have 4 endpoints. They all return JSON:
 
 ### 1) Get all family members:
 
+Which returns all members of the family.
+
 ```md
 GET /members
 
-RESPONSE (content-type: Application/JSON):
-{
-	status_code: 200 if success. 400 if bad request (wrong info) screw up, 500 if the server encounter an error
-    body: { 
-    	members: [], //Array of members.
-		family_name: "", //the family's last name.
-		lucky_numbers: [], //An array with all family member's lucky numbers.
-		sum_of_lucky: Int //Sum of all family member's lucky numbers.
-}
-```
-Important: There are two fields that must be calculated on runtime:
-- lucky_numbers is the concatenation of all the lucky numbers from the family members.
-- sum_of_lucky is the sum of all the lucky numbers of the family members.
+status_code: 200 if success. 400 if bad request (wrong info). 500 if the server encounters an error
 
+RESPONSE BODY (content-type: application/json):
+
+[]  <!--- List of members -->
+```
 
 ### 2) Retrieve one member
+
 Which returns the member of the family where `id == member_id`.
 
 ```md
 GET /member/<int:member_id>
 
-RESPONSE (content_type: Application/JSON):
-status_code: 200 if success. 400 if bad request (wrong info) screw up, 500 if the server encounter an error
+RESPONSE (content_type: application/json):
 
-BODY: //the member's json object
+status_code: 200 if success. 400 if bad request (wrong info). 500 if the server encounters an error
 
+
+body:  <!--- The member's json object --> 
 {
-    name: String,
-    age: Int,
-    lucky_numbers: []
+    "id": Int,
+    "first_name": String,
+    "age": Int,
+    "lucky_numbers": List
 }
 
 ```
 
-
-
 ### 3) Add (POST) new member
+
+Which adds a new member to the family data structure.
 
 ```md
 POST /member
 
-REQUEST Body (content_type: Application/JSON):
+REQUEST BODY (content_type: application/json):
 {
-    name: String,
+    first_name: String,
     age: Int,
-    lucky_numbers: []
+    lucky_numbers: [],
+    id: Int  <!--- randomize function -->
 }
 
-RESPONSE (content_type: Application/JSON):
-status_code: 200 if success. 400 if bad request (wrong info) screw up, 500 if the server encounter an error
+RESPONSE (content_type: application/json):
+
+status_code: 200 if success. 400 if a bad request (wrong info). 500 if the server encounters an error
+
 body: empty
 ```
 
-
+Keep in mind that POST request data dictionary may contain a key and a value for this new member `id`.
+- If it does not, your API should randomly generate one when adding family members.
+- If it does include it, that is the value to be used for such end.
 
 ### 4) DELETE one member
+
+Which deletes a family member with `id == member_id`
 
 ```md
 DELETE /member/<int:member_id>
 
-RESPONSE (content_type: Application/JSON):
-{
-    status_code: 200 if success. 400 if bad request (wrong info) screw up, 500 if the server encounter an error
+RESPONSE (content_type: application/json):
+
+status_code: 200 if success. 400 if a bad request (wrong info). 500 if the server encounters an error
+
+body: {
     done: True
-}
+}    
+
 ```
 
 ## Requirements
 
-- All requests and reponses should be in content/type: application/json
-- Response codes must be `200` for success, `400` for bad request or `404` for not found.
-- This exercise does not include a database, everything must be done in Runtime (RAM).
+- All requests and responses should be in content/type: application/json
+- Response codes must be `200` for success, `400` for bad request, or `404` for not found.
+- These exercises do not include a database, everything must be done in Runtime (RAM).
+
+This and many other projects are built by students as part of the 4Geeks Academy [Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and many other contributors. Find out more about our [Full Stack Developer Course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer), and [Data Science Bootcamp](https://4geeksacademy.com/us/coding-bootcamps/datascience-machine-learning).
