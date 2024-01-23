@@ -32,14 +32,6 @@ class FamilyStructure:
             if self._members[position]["id"] == id:
                 self._members.pop(position)
                 return None
-            
-    def deleted_member(self, id):
-        for position in range(len(self._members)):
-            if self._members[position]["id"] == id:
-                deleted_member = self._members.pop(position)
-                return deleted_member
-        return None
-        
 
     def get_member(self, id):
         for member in self._members:
