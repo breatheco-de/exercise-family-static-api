@@ -50,26 +50,23 @@ Every **member** of the Jackson family must be a dictionary - the equivalent of 
 + first_name: String
 + last_name: String (Always Jackson)
 + age: Int > 0
-+ lucky_numbers: Array of int
++ lucky_numbers: List of integers
 ```
 
 The **family** data-structure will be a class with the following structure:
 
 ```python
-class Family:
-
+class FamilyStructure:
     def __init__(self, last_name):
         self.last_name = last_name
-        # example list of members
-        self._members = [{
-            "id": self._generateId(),
-            "first_name": "John",
-            "last_name": last_name
-        }]
+        self._next_id = 1
+        self._members = []
 
-    # read-only: Use this method to generate random member ids when adding members into the list
-    def _generateId(self):
-        return random.randint(0, 99999999)  # import random 
+    # This method generates a unique 'id' when adding members into the list (you shouldn't touch this function)
+    def _generate_id(self):
+        generated_id = self._next_id
+        self._next_id += 1
+        return generated_id
 
     def add_member(self, member):
         ## You have to implement this method
@@ -79,11 +76,6 @@ class Family:
     def delete_member(self, id):
         ## You have to implement this method
         ## Loop the list and delete the member with the given id
-        pass
-
-    def update_member(self, id, member):
-        ## You have to implement this method
-        ## Loop the list and update the member with the given id
         pass
 
     def get_member(self, id):
@@ -162,22 +154,16 @@ POST /member
 
 REQUEST BODY (content_type: application/json):
 {
+    id: Int,
     first_name: String,
     age: Int,
-    lucky_numbers: [],
-    id: Int  <!--- randomize function -->
+    lucky_numbers: []
 }
 
 RESPONSE (content_type: application/json):
 
 status_code: 200 if success. 400 if a bad request (wrong info). 500 if the server encounters an error
-
-body: empty
 ```
-
-Keep in mind that POST request data dictionary may contain a key and a value for this new member `id`.
-- If it does not, your API should randomly generate one when adding family members.
-- If it does include it, that is the value to be used for such end.
 
 ### 4) DELETE one member
 
@@ -193,7 +179,6 @@ status_code: 200 if success. 400 if a bad request (wrong info). 500 if the serve
 body: {
     done: True
 }    
-
 ```
 
 ## Requirements
