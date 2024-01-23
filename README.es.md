@@ -48,26 +48,23 @@ Cada **miembro** de la familia Jackson debe ser un diccionario, equivalente a [O
 + first_name: String
 + last_name: String (Siempre Jackson)
 + age: Int > 0
-+ lucky_numbers: Array of int
++ lucky_numbers: List of integers
 ```
 
 La estructura de datos **family** será una clase con la siguiente estructura:
 
 ```python
-class Family:
-
+class FamilyStructure:
     def __init__(self, last_name):
         self.last_name = last_name
-        # ejemplo de lista de miembros
-        self._members = [{
-            "id": self._generateId(),
-            "first_name": "John",
-            "last_name": last_name
-        }]
+        self._next_id = 1
+        self._members = []
 
-    # solo lectura: Utiliza este método para generar ids aleatorias de miembros al agregarlos a la lista
-    def _generateId(self):
-        return randint(0, 99999999)  # import random 
+    # Este método genera un 'id' único al agregar miembros a la lista (no debes modificar esta función)
+    def _generate_id(self):
+        generated_id = self._next_id
+        self._next_id += 1
+        return generated_id
 
     def add_member(self, member):
         ## Debes implementar este método
@@ -77,11 +74,6 @@ class Family:
     def delete_member(self, id):
         ## Debes implementar este método
         ## Recorre la lista y elimina el miembro con el id proporcionado
-        pass
-
-    def update_member(self, id, member):
-        ## Debes implementar este método
-        ## Recorre la lista y actualiza el miembro con el id proporcionado
         pass
 
     def get_member(self, id):
@@ -158,22 +150,17 @@ POST /member
 
 REQUEST BODY (content_type: application/json):
 {
+    id: Int,
     first_name: String,
     age: Int,
-    lucky_numbers: [],
-    id: Int <!--- función número aleatorio -->
+    lucky_numbers: []
 }
 
 RESPONSE (content_type: application/json):
 
 status_code 200 si se realizó con éxito, 400 si hubo un error por parte del cliente, 500 si el servidor encuentra un error
-
-body: vacío
 ```
 
-Ten en cuenta que el diccionario que envía la solicitud POST puede contener una propiedad y un valor para el `id` del miembro a crear.
-- Si no lo incluye, tu API debe generar un `id` aleatorio al agregarlo a la familia.
-- Si lo incluye, entonces este es el valor que deberás usar como `id` al agregarlo.
 
 ### 4) ELIMINA un miembro
 
