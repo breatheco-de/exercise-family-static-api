@@ -150,10 +150,10 @@ POST /member
 
 REQUEST BODY (content_type: application/json):
 {
-    id: Int
+    id: Int,
     first_name: String,
     age: Int,
-    lucky_numbers: [],
+    lucky_numbers: []
 }
 
 RESPONSE (content_type: application/json):
