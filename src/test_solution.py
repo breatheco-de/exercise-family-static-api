@@ -108,3 +108,4 @@ def test_get_members_returns_list_of_four(client):
     response = client.get('/members')
     members = json.loads(response.data)
     assert len(members) == 4
+
