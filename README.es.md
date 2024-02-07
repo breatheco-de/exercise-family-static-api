@@ -4,7 +4,7 @@
 
 ¡La familia "Jackson" necesita una API estática! Necesitamos construir las *estructuras de datos (data structures)* y crear un API endpoint para interactuar con él utilizando [Hoppscotch](https://hoppscotch.io/) (recomendado) o Postman.
 
-## 🌱 Cómo comenzar este proyecto
+## 🌱 ¿Cómo comenzar este proyecto?
 
 Este proyecto viene con los archivos necesarios para comenzar a trabajar de inmediato.
 
