@@ -27,8 +27,8 @@ def test_first_three(client):
 def test_add_implementation(client):
     response = client.post('/members', json={"first_name": "Tommy",
                                              "id": 3443,
-		                                     "age": 23,
-		                                     "lucky_numbers": [34,65,23,4,6]})
+                                             "age": 23,
+                                             "lucky_numbers": [34,65,23,4,6]})
     assert response.status_code == 200
 
 
