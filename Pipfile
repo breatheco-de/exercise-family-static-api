@@ -13,6 +13,7 @@ pytest = "*"
 mock = "*"
 pytest-testdox = "*"
 pytest-ordering = "*"
+colorama = "*"
 
 [requires]
 python_version = "3.10"
