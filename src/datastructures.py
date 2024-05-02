@@ -1,4 +1,3 @@
-
 """
 update this file to implement the following already declared methods:
 - add_member: Should add a member to the self._members list
@@ -11,26 +10,35 @@ from random import randint
 class FamilyStructure:
     def __init__(self, last_name):
         self.last_name = last_name
-
-        # example list of members
+        self._next_id = 1
         self._members = []
 
-    # read-only: Use this method to generate random members ID's when adding members into the list
+    # Método privado para generar ID de manera interna
     def _generateId(self):
-        return randint(0, 99999999)
+        generated_id = self._next_id
+        self._next_id += 1
+        return generated_id    
 
+    # Método para agregar un miembro a la familia
     def add_member(self, member):
-        # fill this method and update the return
-        pass
+        member["id"] = self._generateId()
+        self._members.append(member)
+        return self._members    
 
+    # Método para eliminar un miembro de la familia por ID
     def delete_member(self, id):
-        # fill this method and update the return
-        pass
+        for i in range(len(self._members)):
+            if self._members[i]["id"] == id:
+                del self._members[i]
+                break
+        return self._members
 
+    # Método para obtener un miembro de la familia por ID
     def get_member(self, id):
-        # fill this method and update the return
-        pass
+        for member in self._members:
+            if member["id"] == id:
+                return member
 
-    # this method is done, it returns a list with all the family members
+    # Método para obtener todos los miembros de la familia
     def get_all_members(self):
         return self._members
