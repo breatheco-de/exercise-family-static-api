@@ -42,12 +42,11 @@ def handle_post():
     body_age = request.json.get("age")
     body_id = request.json.get("id")
     body_lucky_numbers = request.json.get("lucky_numbers")
-    member = {
-        "id": body_id or jackson_family._generateId(),
+    member = {        
         "age": body_age,
         "name": body_name,
         "lucky_numbers": body_lucky_numbers,
-        "last_name": body_last_name
+        "last_name": "Jackson"
     }
     member = request.json
     jackson_family.add_member(member)
