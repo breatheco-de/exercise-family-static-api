@@ -14,9 +14,9 @@ class FamilyStructure:
         # example list of members
         self._members = [
             {
-                "id": self._generateId(),
-                "first_name": "John",
-                "last_name": last_name
+            "id": self._generateId(),
+            "first_name": "John",
+            "last_name": last_name
             },
             {
                 "id": self._generateId(),
@@ -25,8 +25,8 @@ class FamilyStructure:
             },
             {
                 "id": self._generateId(),
-                "first_name" :"Jimmy",
-                "last_name" : last_name
+                "first_name": "Jimmy",
+                "last_name": last_name
             }
         ]
 
@@ -35,12 +35,11 @@ class FamilyStructure:
         return randint(0, 99999999)
 
     def add_member(self, member):
-        member["id"]=self._generateId()
         self._members.append(member)
-        return (self._members)
+        return(self._members)
 
     def delete_member(self, id):
-        member_deleted = list(filter(lambda member: member.get("id") !=id, self._members ))
+        member_deleted = list(filter(lambda member: member.get("id") != id, self._members))
         self._members = member_deleted
         return member_deleted
 
@@ -49,20 +48,7 @@ class FamilyStructure:
         for member in self._members:
             if member.get("id") == id:
                 return member
-            return None
-        
-    def update_member(self, id, member):
-        #update member
-       id_exist = False
-       for item in self._members:
-           if item["id"]==id:
-               item["first_name"] = member["first_name"]
-               item["last_name"] = member["last_name"]
-               id_exist=True
-       if id_exist:
-           return self._members
-       return False
-       
+        return None
 
     # this method is done, it returns a list with all the family members
     def get_all_members(self):

@@ -30,14 +30,14 @@ def sitemap():
 def get_members():
     members = jackson_family.get_all_members()
     return jsonify(members), 200
-    
+
 #Get one member
 @app.route('/member/<int:id>', methods=['GET'])
 def get_one_member(id):
     member = jackson_family.get_member(id)
     if member is None:
         return jsonify({"message": "member not found"}), 400
-    return jsonify(member), 200
+    return(member), 200
 
 #post member
 @app.route('/member', methods=['POST'])
@@ -55,16 +55,6 @@ def delete_members(id):
         "done" : True
         })
     return jsonify({"message":"member not found"}), 400
-
-#Get one member
-@app.route('/member/<int:id>', methods=['PUT'])
-def update_one_member(id):
-    body = request.json
-    result = jackson_family.update_member(id, body)
-    if result is False:
-        return jsonify({"message": "member not found"}), 400
-    return jsonify(result), 200
-
 
 
 # this only runs if `$ python src/app.py` is executed
