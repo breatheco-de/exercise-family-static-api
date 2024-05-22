@@ -8,7 +8,7 @@ class APIException(Exception):
         self.message = message
         if status_code is not None:
             self.status_code = status_code
-        self.payload = payload
+        self.payload = payload 
 
     def to_dict(self):
         rv = dict(self.payload or ())
@@ -28,6 +28,8 @@ def generate_sitemap(app):
         if "GET" in rule.methods and has_no_empty_params(rule):
             url = url_for(rule.endpoint, **(rule.defaults or {}))
             links.append(url)
+
+            
 
     links_html = "".join(["<li><a href='" + y + "'>" + y + "</a></li>" for y in links])
     return """
