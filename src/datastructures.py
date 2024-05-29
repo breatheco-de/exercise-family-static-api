@@ -28,8 +28,9 @@ class FamilyStructure:
                           'lucky_numbers': [1]}]
 
     def _generate_id(self):
-        # Read-only: Use this method to generate random members ID's when adding members into the list
-        return randint(0, 99999999)
+        generated_id = self._next_id
+        self._next_id += 1
+        return generated_id
 
     def add_member(self, member):
         # Fill this method and update the return
@@ -40,11 +41,11 @@ class FamilyStructure:
         return self._members
 
     def delete_member(self, id):
-        # Fill this method and update the return
-        # buscar el elemento cuyo id sea igual al row['id']
-        #    si lo enentra lo elimna
-        # del self._members
-        return id
+        for position in range(len(self._members)):
+            if self._members[position]["id"] == id:
+                self._members.pop(position)
+                
+                return None
 
     def get_member(self, id):
         # Opción 1 - for in
