@@ -1,0 +1,3 @@
+[console_scripts]
+cors = CORScanner.cors_scan:main
+
