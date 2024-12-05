@@ -4,6 +4,8 @@
 
 ¡La familia "Jackson" necesita una API estática! Necesitamos construir las *estructuras de datos (data structures)* y crear un API endpoint para interactuar con él utilizando [Hoppscotch](https://hoppscotch.io/) (recomendado) o Postman.
 
+<onlyfor saas="false" withBanner="false">
+    
 ## 🌱 Cómo comenzar este proyecto
 
 Este proyecto viene con los archivos necesarios para comenzar a trabajar de inmediato.
@@ -15,6 +17,8 @@ Este es el repositorio que necesitas abrir:
 ```txt
 https://github.com/breatheco-de/exercise-family-static-api
 ```
+
+</onlyfor>
 
 ## 💻 Instalación
 
