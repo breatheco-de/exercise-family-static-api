@@ -8,6 +8,7 @@
 	"difficulty": "beginner",
 	"technologies": ["flask", "python", "json", "serialization", "data-structures", "rest","api"],
 	"duration" : 8,
+	"template_url": "self",
 	"description" : "Create an API to show family members",
 	"talents": [
 		{ "badge": "identator", "points": 10 }
