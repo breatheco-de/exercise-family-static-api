@@ -1,5 +1,9 @@
 {
-	"title" : "Family Static API with Flask",
+	"gitpod": true,
+	"title" : {
+    "us": "Family Static API with Flask",
+    "es": "API Estática de Familia con Flask"
+},
 	"slug" : "family-static-api",
 	"status": "published",
 	"translations": ["es", "us"],
@@ -9,10 +13,16 @@
 	"technologies": ["flask", "python", "json", "serialization", "data-structures", "rest","api"],
 	"duration" : 8,
 	"template_url": "self",
-	"description" : "Create an API to show family members",
+	"description" : {
+    "us": "Build a family management API with Flask, focusing on creating efficient data structures to handle and manipulate family member information. In this project, you'll learn how to develop dynamic RESTful API endpoints, manage in-memory data, and handle JSON responses. Gain hands-on experience in Flask, data management, and API design",
+    "es": "Crea una API de gestión de familiares con Flask, enfocándote en desarrollar estructuras de datos eficientes para manejar y manipular la información de los miembros de la familia. En este proyecto, aprenderás a desarrollar puntos finales dinámicos de API RESTful, gestionar datos en memoria y manejar respuestas en formato JSON. Obtén experiencia práctica en Flask, gestión de datos y diseño de APIs."
+},
 	"talents": [
 		{ "badge": "identator", "points": 10 }
 	],
     "autoPlay": false,
-    "projectType": "project"
+    "projectType": "project",
+    "telemetry": {
+    "batch": "https://breathecode.herokuapp.com/v1/assignment/me/telemetry?asset_id=188"
+}
 }
