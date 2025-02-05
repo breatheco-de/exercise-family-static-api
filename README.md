@@ -4,6 +4,8 @@
 
 The Jackson Family needs a static API! We need to build the *data structures* and create the API endpoints to interact with it using [Hoppscotch](https://hoppscotch.io/) (recommended) or Postman.
 
+<onlyfor saas="false" withBanner="false">
+    
 ## 🌱 How to start this project
 
 This project comes with the necessary files to start working immediately.
@@ -17,6 +19,8 @@ https://github.com/breatheco-de/exercise-family-static-api
 ```
 
 **👉 Please follow these steps on** [how to start a coding project](https://4geeks.com/lesson/how-to-start-a-project).
+
+</onlyfor>
 
 ## 💻 Installation
 

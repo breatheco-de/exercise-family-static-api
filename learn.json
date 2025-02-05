@@ -12,6 +12,7 @@
 	"difficulty": "beginner",
 	"technologies": ["flask", "python", "json", "serialization", "data-structures", "rest","api"],
 	"duration" : 8,
+	"template_url": "self",
 	"description" : {
     "us": "Build a family management API with Flask, focusing on creating efficient data structures to handle and manipulate family member information. In this project, you'll learn how to develop dynamic RESTful API endpoints, manage in-memory data, and handle JSON responses. Gain hands-on experience in Flask, data management, and API design",
     "es": "Crea una API de gestión de familiares con Flask, enfocándote en desarrollar estructuras de datos eficientes para manejar y manipular la información de los miembros de la familia. En este proyecto, aprenderás a desarrollar puntos finales dinámicos de API RESTful, gestionar datos en memoria y manejar respuestas en formato JSON. Obtén experiencia práctica en Flask, gestión de datos y diseño de APIs."
