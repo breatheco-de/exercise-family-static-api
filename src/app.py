@@ -15,6 +15,15 @@ CORS(app)
 # create the jackson family object
 jackson_family = FamilyStructure("Jackson")
 
+initial_members = [
+    {"id": 3443, "first_name": "Tommy", "age": 21, "lucky_numbers": [63, 9, 22]},
+    {"id": 4144, "first_name": "Luke", "age": 34, "lucky_numbers": [10, 94, 93]},
+    {"id": 5234, "first_name": "Jack", "age": 5, "lucky_numbers": [1, 75]}
+]
+for member in initial_members:
+    jackson_family.add_member(member)
+
+
 # Handle/serialize errors like a JSON object
 @app.errorhandler(APIException)
 def handle_invalid_usage(error):
@@ -25,29 +34,31 @@ def handle_invalid_usage(error):
 def sitemap():
     return generate_sitemap(app)
 
-@app.route('/members', methods=['POST'])
+
+
+@app.route('/member', methods=['POST'])
 def add_member():
     member_data = request.json
     new_member = jackson_family.add_member(member_data)
-    return jsonify(response_body), 200
+    return jsonify(new_member), 200
 
 @app.route('/members', methods=['GET'])
-def get_member():
+def get_members():
     members = jackson_family.get_all_members()
-    return jsonify(response_body), 200
+    return jsonify(members), 200
 
-@app.route('/members/<int:member_id>', methods=['GET'])
+@app.route('/member/<int:member_id>', methods=['GET'])
 def get_member(member_id):
-    members = jackson_family.get_members(member_id)
-        if member:
-            return jsonify(member), 200
-        else:
-            return jsonify({"message": "Member not found"}), 404
+    member = jackson_family.get_member(member_id)
+    if member:
+        return jsonify(member), 200
+    else:
+        return jsonify({"message": "Member not found"}), 404
 
-app.route('/member/<int:member_id>', methods=['DELETE'])
+@app.route('/member/<int:member_id>', methods=['DELETE'])
 def delete_member(member_id):
     result = jackson_family.delete_member(member_id)
-    if result != "Member not found":
+    if result:
         return jsonify({"done": True}), 200
     else:
         return jsonify({"message": "Member not found"}), 404            
