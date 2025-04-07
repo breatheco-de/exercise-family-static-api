@@ -132,7 +132,7 @@ RESPONSE BODY (content-type: application/json):
 Which returns the member of the family where `id == member_id`.
 
 ```md
-GET /member/<int:member_id>
+GET /members/<int:member_id>
 
 RESPONSE (content_type: application/json):
 
@@ -154,7 +154,7 @@ body:  <!--- The member's json object -->
 Which adds a new member to the family data structure.
 
 ```md
-POST /member
+POST /members
 
 REQUEST BODY (content_type: application/json):
 {
@@ -174,7 +174,7 @@ status_code: 200 if success. 400 if a bad request (wrong info). 500 if the serve
 Which deletes a family member with `id == member_id`
 
 ```md
-DELETE /member/<int:member_id>
+DELETE /members/<int:member_id>
 
 RESPONSE (content_type: application/json):
 

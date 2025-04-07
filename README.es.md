@@ -130,7 +130,7 @@ RESPONSE BODY (content-type: application/json):
 Devuelve el miembro de la familia para el cual `id == member_id`.
 
 ```md
-GET /member/<int:member_id>
+GET /members/<int:member_id>
 
 RESPONSE (content_type: application/json):
 
@@ -150,7 +150,7 @@ body:  <!--- el objeto json del miembro de la familia -->
 Agrega un nuevo miembro a la estructura de datos de la familia.
 
 ```md
-POST /member
+POST /members
 
 REQUEST BODY (content_type: application/json):
 {
@@ -171,7 +171,7 @@ status_code 200 si se realizó con éxito, 400 si hubo un error por parte del cl
 Elimina el miembro de la familia para el cual `id == member_id`.
 
 ```md
-DELETE /member/<int:member_id>
+DELETE /members/<int:member_id>
 
 RESPONSE (content_type: application/json):
 
