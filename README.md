@@ -8,7 +8,7 @@ The Jackson Family needs a static API! We need to build the *data structures* an
     
 ## 🌱 How to start this project
 
-This project comes with the necessary files to start working immediately.
+This project comes with the necessary files to start working immediately!
 
 We recommend opening this very same repository using a provisioning tool like [Codespaces](https://4geeks.com/lesson/what-is-github-codespaces) (recommended) or [Gitpod](https://4geeks.com/lesson/how-to-use-gitpod). Alternatively, you can clone it on your local computer using the `git clone` command.
 
